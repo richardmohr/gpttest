@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OptiSense Industrial Sensor Price Radar</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">B2B SOURCING DASHBOARD</p>
+        <h1>Industrial Optical Sensors by OptiSense Technologies</h1>
+        <p class="lede">
+          Compare wholesale-ready sensors, price points, pack sizes and lead times with
+          AI-enriched market intelligence. Built for procurement engineers.
+        </p>
+        <form id="search-form" class="search">
+          <input
+            type="text"
+            id="query"
+            name="query"
+            placeholder="Search by spec, SKU or use case (e.g. \"vision alignment\")"
+            required
+          />
+          <button type="submit">Run Price Scan</button>
+        </form>
+        <p class="note">
+          Data source: OpenAI JSON endpoint via secure backend. Falls back to curated demo
+          data when API access is unavailable.
+        </p>
+      </div>
+      <div class="hero__badge">
+        <span>Category</span>
+        <strong>Smart Factory Vision</strong>
+        <span>Manufacturer</span>
+        <strong>OptiSense Technologies</strong>
+      </div>
+    </header>
+
+    <main>
+      <section class="results-panel" aria-live="polite">
+        <div id="status" class="status">Enter a query to begin.</div>
+        <div id="cards" class="card-grid"></div>
+      </section>
+
+      <section class="tech-specs">
+        <h2>Core Technical Requirements</h2>
+        <ul>
+          <li>EtherNet/IP, PROFINET and OPC-UA integration ready</li>
+          <li>Minimum ingress protection: IP67 sealed aluminum enclosure</li>
+          <li>Optical accuracy &lt; 10µm at 1.5m working distance</li>
+          <li>24V DC redundant inputs with surge suppression</li>
+          <li>ANSI Z136 Class 1 laser compliance for operator safety</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> OptiSense Industrial Commerce Lab</p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

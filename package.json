@@ -1,0 +1,11 @@
+{
+  "name": "b2b-price-search",
+  "version": "1.0.0",
+  "description": "Static frontend with Node.js backend for querying OpenAI for B2B product prices.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}
