@@ -1,3 +1,9 @@
 # Key-value pairs for server configuration
+<<<<<<< HEAD
 OPENAI_API_KEY=Bearer 2h7GebIpGEsKOzKH0WY1wEFgMC1AcasXX8jFIWevqBTmv4wvBzAiuFqUFBRMQeMY
+=======
+# Replace the placeholder below with your real OpenAI API key, e.g.
+# OPENAI_API_KEY=sk-your-secret-key
+OPENAI_API_KEY=
+>>>>>>> 5ae705f762bc1d8dc8ed6df5476f024514852315
 MODEL=gpt-4o-mini

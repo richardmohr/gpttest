@@ -68,7 +68,12 @@ async function callOpenAI(query) {
     });
 
     if (!response.ok) {
-      throw new Error(`OpenAI request failed: ${response.status} ${response.statusText}`);
+      let hint = '';
+      if (response.status === 401) {
+        hint =
+          ' — verify OPENAI_API_KEY in config/custom.txt or the OPENAI_API_KEY environment variable is a valid key.';
+      }
+      throw new Error(`OpenAI request failed: ${response.status} ${response.statusText}${hint}`);
     }
 
     const data = await response.json();
