@@ -2,6 +2,96 @@ const MAX_ITEMS = 4;
 
 const mockProducts = [
   {
+    code: '3EL2-096-HYB',
+    name: '3EL2 Surge Arrestor 96 kV Hybrid',
+    manufacturer: 'Siemens Energy',
+    price: 12800,
+    currency: 'EUR',
+    availability: 'In stock (ships in 2 days)',
+    leadTime: 'Factory routine test included',
+    image:
+      'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80',
+    groups: [
+      {
+        id: 'surge-core',
+        name: 'Surge Arrestor Core',
+        attributes: [
+          { id: 'systemVoltage', name: 'System Voltage (Us)', value: '110 kV', comparable: true },
+          { id: 'ratedVoltage', name: 'Rated Voltage (Ur)', value: '96 kV', comparable: true },
+          { id: 'lineDischargeClass', name: 'Line Discharge Class', value: 'Class 3', comparable: true },
+          { id: 'nominalDischarge', name: 'Nominal Discharge Current (In)', value: '10 kA', comparable: true },
+          { id: 'residualVoltage', name: 'Residual Voltage @ In', value: '≤ 320 kV', comparable: true },
+          { id: 'energyCapability', name: 'Energy Capability', value: '11 kJ/kV Ur', comparable: true }
+        ]
+      },
+      {
+        id: 'mechanical-env',
+        name: 'Mechanical & Environmental',
+        attributes: [
+          { id: 'housing', name: 'Housing', value: 'Silicone polymer, hydrophobic', comparable: true },
+          { id: 'creepage', name: 'Creepage Distance', value: '31 mm/kV', comparable: true },
+          { id: 'mounting', name: 'Mounting', value: 'Live tank, vertical', comparable: true },
+          { id: 'weight', name: 'Weight', value: '18 kg', comparable: true },
+          { id: 'altitude', name: 'Altitude Rating', value: 'Up to 1800 m', comparable: true }
+        ]
+      },
+      {
+        id: 'services',
+        name: 'Standards & Service',
+        attributes: [
+          { id: 'standard', name: 'Standards', value: 'IEC 60099-4 / IEEE C62.11', comparable: false },
+          { id: 'monitoring', name: 'Monitoring', value: 'Counter + leakage sensor ready', comparable: false },
+          { id: 'warranty', name: 'Warranty', value: '36 months', comparable: false }
+        ]
+      }
+    ]
+  },
+  {
+    code: '3EL2-072-AC',
+    name: '3EL2 Surge Arrestor 72.5 kV AC',
+    manufacturer: 'Siemens Energy',
+    price: 10150,
+    currency: 'EUR',
+    availability: 'In stock (ships next day)',
+    leadTime: 'Routine and type test data provided',
+    image:
+      'https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=600&q=80',
+    groups: [
+      {
+        id: 'surge-core',
+        name: 'Surge Arrestor Core',
+        attributes: [
+          { id: 'systemVoltage', name: 'System Voltage (Us)', value: '72.5 kV', comparable: true },
+          { id: 'ratedVoltage', name: 'Rated Voltage (Ur)', value: '60 kV', comparable: true },
+          { id: 'lineDischargeClass', name: 'Line Discharge Class', value: 'Class 2', comparable: true },
+          { id: 'nominalDischarge', name: 'Nominal Discharge Current (In)', value: '10 kA', comparable: true },
+          { id: 'residualVoltage', name: 'Residual Voltage @ In', value: '≤ 210 kV', comparable: true },
+          { id: 'energyCapability', name: 'Energy Capability', value: '8 kJ/kV Ur', comparable: true }
+        ]
+      },
+      {
+        id: 'mechanical-env',
+        name: 'Mechanical & Environmental',
+        attributes: [
+          { id: 'housing', name: 'Housing', value: 'Si-polymer, pollution class IV ready', comparable: true },
+          { id: 'creepage', name: 'Creepage Distance', value: '25 mm/kV', comparable: true },
+          { id: 'mounting', name: 'Mounting', value: 'Pedestal, flexible connectors', comparable: true },
+          { id: 'weight', name: 'Weight', value: '14 kg', comparable: true },
+          { id: 'altitude', name: 'Altitude Rating', value: 'Up to 1500 m', comparable: true }
+        ]
+      },
+      {
+        id: 'services',
+        name: 'Standards & Service',
+        attributes: [
+          { id: 'standard', name: 'Standards', value: 'IEC 60099-4 / IEEE C62.11', comparable: false },
+          { id: 'monitoring', name: 'Monitoring', value: 'Counter optional', comparable: false },
+          { id: 'warranty', name: 'Warranty', value: '30 months', comparable: false }
+        ]
+      }
+    ]
+  },
+  {
     code: 'SE-EL-400',
     name: 'SIPROTEC Edge Line 400',
     manufacturer: 'Siemens Energy',

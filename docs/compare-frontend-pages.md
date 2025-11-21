@@ -10,7 +10,7 @@ This static page (`/compare.html`) demonstrates the Angular component model desc
 - **DifferenceToggleComponent:** simple switch flipping the derived selector to hide identical rows.
 
 ## Mock data + state
-- Data is seeded from `mockProducts` with **classification groups** (`specs`, `mechanical`, `services`), preserving positional order to emulate OCC feature groups.
+- Data is seeded from `mockProducts` with **classification groups** (`specs`, `mechanical`, `services`), preserving positional order to emulate OCC feature groups. It now includes two **Siemens Energy 3EL2 surge arrestor variants** (96 kV hybrid and 72.5 kV AC) with core electrical ratings, creepage, mounting, and standards to exercise difference-only rendering.
 - State keeps `codes` and `showDifferencesOnly`; max items enforced at 4 like the Spartacus facade would.
 - Difference-only rendering filters rows when all product values match.
 
