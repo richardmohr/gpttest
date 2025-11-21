@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare – Siemens Energy Style Prototype</title>
+    <link rel="stylesheet" href="compare-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="se-header">
+      <div class="brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <div>
+          <p class="brand__eyebrow">Composable Storefront · Angular</p>
+          <h1>Product Compare (Siemens Energy-inspired)</h1>
+        </div>
+      </div>
+      <nav class="actions">
+        <a href="#plp" class="link">PLP with CompareToggle</a>
+        <a href="#compare" class="pill">Go to Compare Page</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="plp" class="panel">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">PLP/PDP mock (Angular component shell)</p>
+            <h2>CompareToggleComponent in grid cards</h2>
+          </div>
+          <p class="muted">Click “Add to compare” to fill the tray and open the comparison page.</p>
+        </div>
+        <div id="product-grid" class="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="compare" class="panel">
+        <div class="panel__header sticky">
+          <div>
+            <p class="eyebrow">ComparePageComponent</p>
+            <h2>Side-by-side classification attributes</h2>
+          </div>
+          <div class="compare-controls">
+            <label class="switch">
+              <input id="diff-toggle" type="checkbox" aria-label="Show differences only" />
+              <span class="slider"></span>
+              <span class="switch__label">Show differences only</span>
+            </label>
+            <button id="clear-all" class="ghost">Clear all</button>
+            <a href="#plp" class="pill">Add more products</a>
+          </div>
+        </div>
+
+        <div id="empty-state" class="empty" hidden>
+          <p>No items in compare. Add products from the PLP or PDP view.</p>
+        </div>
+
+        <div id="compare-matrix" class="compare-matrix" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <div id="compare-tray" class="tray" aria-live="polite"></div>
+
+    <script src="compare.js" type="module"></script>
+  </body>
+</html>

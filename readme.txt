@@ -3,6 +3,8 @@
 Use this repository to keep short how-to notes for SAP Commerce Cloud customization work.
 
 - [Creating a New OCC Endpoint](docs/occ-endpoint-guide.md)
+- [Composable Storefront Compare Feature (frontend concept)](docs/compare-frontend-concept.md)
+- [Compare UI prototype (Siemens Energy-inspired)](docs/compare-frontend-pages.md)
 
 ## B2B Industrial Price Search Prototype
 
