@@ -3,6 +3,8 @@
 Use this repository to keep short how-to notes for SAP Commerce Cloud customization work.
 
 - [Creating a New OCC Endpoint](docs/occ-endpoint-guide.md)
+- [Composable Storefront Compare Feature (frontend concept)](docs/compare-frontend-concept.md)
+- [Compare UI prototype (Siemens Energy-inspired)](docs/compare-frontend-pages.md)
 
 ## B2B Industrial Price Search Prototype
 
@@ -15,6 +17,14 @@ This prototype ships a static frontend and a lightweight Node.js backend-for-fro
 3. Open `http://localhost:3000` and run a query such as `robotic welding cell`.
 
 If the API key is missing or the OpenAI call fails, the UI will render curated fallback data so that the interface remains functional for demos.
+
+## Compare prototype quick start (fixes file:// CORS issue)
+
+Modern browsers block ES module scripts when loaded from the local file system (`file://.../public/compare.html`). Run the lightweight Node server instead so assets load over HTTP:
+
+1. Install Node 18+.
+2. From the repo root, run `npm start` (or `node server.js`).
+3. Open `http://localhost:3000/compare.html` to use the Siemens Energy compare mock without CORS errors.
 
 ### Configuring the OpenAI key
 
