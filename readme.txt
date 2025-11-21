@@ -26,3 +26,4 @@ MODEL=gpt-4o-mini
 ```
 
 > **Tip:** A `401 Unauthorized` message in the UI or server logs usually means the key is missing, expired, or spelled incorrectly. Update `config/custom.txt` (or re-export `OPENAI_API_KEY` in your shell) and restart `node server.js` after saving changes.
+test!!
