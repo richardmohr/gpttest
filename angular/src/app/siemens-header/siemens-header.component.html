@@ -1,0 +1,179 @@
+<header class="w-full bg-gradient-to-b from-[var(--header-bg-gradient-from)] to-[var(--header-bg-gradient-to)] text-[var(--header-text)] shadow-xl">
+  <div class="border-b border-[var(--header-border)] backdrop-blur-sm">
+    <div class="px-8 py-4 flex items-center justify-between gap-8">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-4 group">
+          <div class="flex flex-col gap-0.5 transition-transform duration-300 group-hover:scale-105">
+            <div class="flex items-baseline gap-1">
+              <span class="text-base tracking-wider uppercase font-semibold">SIEMENS</span>
+            </div>
+            <div class="text-[10px] tracking-wider uppercase text-[var(--header-text-muted)] transition-colors duration-300 group-hover:text-[var(--header-accent)]">
+              energy
+            </div>
+          </div>
+          <div class="h-8 w-px bg-gradient-to-b from-transparent via-[var(--header-border)] to-transparent"></div>
+          <span class="text-sm font-medium">Energy Shop</span>
+        </div>
+
+        <div
+          class="flex items-center bg-[var(--header-glass-bg)] rounded-xl overflow-hidden w-full max-w-[380px] backdrop-blur-sm border border-[var(--header-glass-border)] transition-all duration-300"
+          [ngClass]="{
+            'shadow-lg ring-2 ring-[var(--header-accent)] ring-opacity-30': isSearchFocused,
+            'shadow-sm': !isSearchFocused
+          }"
+        >
+          <div class="flex items-center gap-3 px-4 py-2.5 flex-1">
+            <svg
+              class="w-4 h-4 shrink-0 transition-colors duration-300"
+              [ngClass]="{
+                'text-[var(--header-accent)]': isSearchFocused,
+                'text-gray-400': !isSearchFocused
+              }"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-4.35-4.35m1.85-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search by SE Part name, SE Part #"
+              [(ngModel)]="searchValue"
+              (focus)="isSearchFocused = true"
+              (blur)="isSearchFocused = false"
+              class="flex-1 bg-transparent border-none outline-none text-sm text-gray-900 placeholder:text-gray-400"
+            />
+          </div>
+          <button
+            class="shrink-0 bg-gradient-to-br from-[var(--header-accent)] to-[var(--header-accent-dark)] text-white px-5 py-2.5 transition-all duration-300 h-full hover:shadow-[var(--header-shadow-glow)] hover:scale-105 active:scale-95"
+            type="button"
+            (click)="onSearch()"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-4.35-4.35m1.85-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button
+          class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-[var(--header-surface)] border border-[var(--header-border)] hover:bg-[var(--header-surface-hover)] hover:border-[var(--header-accent)] transition-all duration-300 hover:shadow-md hover:scale-105 active:scale-95"
+          type="button"
+          (click)="toggleUserMenu('partners')"
+        >
+          <div class="relative">
+            <div class="w-5 h-5 rounded-full bg-gradient-to-br from-[var(--header-accent)] to-[var(--header-accent-dark)] flex items-center justify-center shadow-md">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <div class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-green-400 rounded-full border-2 border-[var(--header-bg)]"></div>
+          </div>
+          <span class="text-sm font-medium">Partners</span>
+          <svg
+            class="w-3.5 h-3.5 text-[var(--header-text-muted)] transition-all duration-300"
+            [ngClass]="{ 'rotate-180 text-[var(--header-accent)]': isUserMenuOpen.partners }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+
+        <button
+          class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-[var(--header-surface)] border border-[var(--header-border)] hover:bg-[var(--header-surface-hover)] hover:border-[var(--header-accent)] transition-all duration-300 hover:shadow-md hover:scale-105 active:scale-95"
+          type="button"
+          (click)="toggleUserMenu('user')"
+        >
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--header-accent)] to-[var(--header-accent-dark)] flex items-center justify-center shadow-md ring-2 ring-[var(--header-accent)] ring-opacity-20">
+            <span class="text-xs text-white font-semibold">{{ getInitials('Dirk Klaasen') }}</span>
+          </div>
+          <span class="text-sm font-medium">Dirk Klaasen</span>
+          <svg
+            class="w-3.5 h-3.5 text-[var(--header-text-muted)] transition-all duration-300"
+            [ngClass]="{ 'rotate-180 text-[var(--header-accent)]': isUserMenuOpen.user }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-8 py-4 flex items-center justify-between gap-8 backdrop-blur-sm">
+    <div class="flex items-start gap-3">
+      <div
+        class="flex flex-col gap-1 px-4 py-2 rounded-lg bg-[var(--header-surface)] border border-[var(--header-border)] hover:bg-[var(--header-surface-hover)] hover:border-[var(--header-accent)] transition-all duration-300 hover:shadow-md hover:scale-105 group"
+        *ngFor="let item of infoItems"
+      >
+        <span class="text-[10px] text-[var(--header-text-muted)] uppercase tracking-wider leading-none font-medium">{{ item.label }}:</span>
+        <span class="text-sm font-semibold leading-none group-hover:text-[var(--header-accent)] transition-colors duration-300">{{ item.value }}</span>
+      </div>
+    </div>
+
+    <div class="flex-1 flex justify-center">
+      <nav class="flex items-center gap-1 bg-[var(--header-surface)] px-2 py-1.5 rounded-xl border border-[var(--header-border)]">
+        <button
+          class="relative px-4 py-2.5 text-sm flex items-center gap-2 rounded-lg font-medium transition-all duration-300 active:scale-95"
+          *ngFor="let nav of navItems; let i = index"
+          [ngClass]="{
+            'bg-gradient-to-br from-[var(--header-accent)] to-[var(--header-accent-dark)] text-white shadow-md': nav.isActive,
+            'text-white hover:bg-[var(--header-surface-hover)] hover:scale-105': !nav.isActive
+          }"
+          (mouseenter)="setHoveredNav(i)"
+          (mouseleave)="setHoveredNav(null)"
+        >
+          {{ nav.label }}
+          <svg
+            *ngIf="nav.hasDropdown"
+            class="w-3.5 h-3.5 transition-all duration-300"
+            [ngClass]="{ 'rotate-180': hoveredNavIndex === i }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6" />
+          </svg>
+          <div
+            *ngIf="nav.isActive"
+            class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-[var(--header-accent)] rounded-full shadow-[var(--header-shadow-glow)]"
+          ></div>
+        </button>
+      </nav>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button
+        *ngFor="let action of actionButtons"
+        class="px-4 py-2.5 text-sm rounded-lg font-medium transition-all duration-300 whitespace-nowrap active:scale-95 text-[var(--header-accent)] bg-[var(--header-surface)] border border-[var(--header-border)] hover:bg-[var(--header-surface-hover)] hover:border-[var(--header-accent)] hover:shadow-md hover:scale-105"
+        type="button"
+      >
+        {{ action }}
+      </button>
+
+      <button
+        class="relative px-5 py-2.5 bg-gradient-to-br from-[var(--header-accent)] to-[var(--header-accent-dark)] rounded-lg transition-all duration-300 flex items-center gap-2.5 shadow-md hover:shadow-[var(--header-shadow-glow)] hover:scale-105 active:scale-95 group"
+        type="button"
+      >
+        <svg class="w-4 h-4 text-white transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 5h2l1.5 9h10.5l2-6H7.4"
+          />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
+        </svg>
+        <span class="text-sm text-white font-medium">Cart</span>
+        <div
+          class="absolute -top-2 -right-2 bg-gradient-to-br from-red-500 to-red-600 text-white text-xs w-6 h-6 flex items-center justify-center rounded-full font-semibold shadow-lg ring-2 ring-[var(--header-bg)] animate-pulse"
+        >
+          1
+        </div>
+      </button>
+    </div>
+  </div>
+</header>
